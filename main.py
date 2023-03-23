@@ -7,7 +7,7 @@ import requests
 from requests.auth import HTTPBasicAuth
 
 
-WAIT_TIME = 5 * 60
+WAIT_TIME = 1 * 60
 
 
 def main(username: str, password: str):
@@ -22,6 +22,6 @@ if __name__ == "__main__":
     username = os.environ.get("OPENSKY_USER")
     password = os.environ.get("OPENSKY_PASSWORD")
 
-    for i in tqdm.tqdm(range(12)):
+    for i in tqdm.tqdm(range(120)):
         main(username, password)
         time.sleep(WAIT_TIME)
